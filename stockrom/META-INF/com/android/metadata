@@ -1,0 +1,3 @@
+post-build=google/yakju/maguro:4.2.2/JDQ39/573038:user/release-keys
+post-timestamp=1360362364
+pre-device=maguro
