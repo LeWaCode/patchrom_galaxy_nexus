@@ -1766,6 +1766,18 @@
     return-object v0
 .end method
 
+.method getTitleLayout()Landroid/widget/LinearLayout;
+    .locals 1
+    .annotation build Landroid/annotation/LewaHook;
+        value = .enum Landroid/annotation/LewaHook$LewaHookType;->NEW_METHOD:Landroid/annotation/LewaHook$LewaHookType;
+    .end annotation
+
+    .prologue
+    iget-object v0, p0, Lcom/android/internal/widget/ActionBarView;->mTitleLayout:Landroid/widget/LinearLayout;
+
+    return-object v0
+.end method
+
 .method public hasEmbeddedTabs()Z
     .locals 1
 

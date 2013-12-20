@@ -9,9 +9,8 @@ private-phone-apps := ApplicationsProvider \
 					  Stk \
 					  UserDictionaryProvider \
 					  VpnDialogs \
-					  WAPPushManager \
 					  Gallery2 \
 					  UserDictionaryProvider \
-					  Email \
-					  LatinIME \
-					  Phone
+					  EmailGoogle \
+					  Phone \
+					  GalleryGoogle
