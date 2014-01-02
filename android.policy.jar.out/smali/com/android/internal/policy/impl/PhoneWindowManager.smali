@@ -138,6 +138,12 @@
 
 .field mBroadcastWakeLock:Landroid/os/PowerManager$WakeLock;
 
+.field mCameraPowerShutter:Z
+    .annotation build Landroid/annotation/LewaHook;
+        value = .enum Landroid/annotation/LewaHook$LewaHookType;->NEW_FIELD:Landroid/annotation/LewaHook$LewaHookType;
+    .end annotation
+.end field
+
 .field mCanHideNavigationBar:Z
 
 .field mCarDockEnablesAccelerometer:Z
@@ -436,6 +442,12 @@
 .field mTopFullscreenOpaqueWindowState:Landroid/view/WindowManagerPolicy$WindowState;
 
 .field mTopIsFullscreen:Z
+
+.field private mUiContext:Landroid/content/Context;
+    .annotation build Landroid/annotation/LewaHook;
+        value = .enum Landroid/annotation/LewaHook$LewaHookType;->NEW_FIELD:Landroid/annotation/LewaHook$LewaHookType;
+    .end annotation
+.end field
 
 .field mUnrestrictedScreenHeight:I
 
@@ -3304,6 +3316,9 @@
     .parameter "displayWidth"
     .parameter "displayHeight"
     .parameter "displayRotation"
+    .annotation build Landroid/annotation/LewaHook;
+        value = .enum Landroid/annotation/LewaHook$LewaHookType;->CHANGE_CODE:Landroid/annotation/LewaHook$LewaHookType;
+    .end annotation
 
     .prologue
     const/4 v2, 0x0
@@ -6997,6 +7012,9 @@
     .parameter "context"
     .parameter "windowManager"
     .parameter "windowManagerFuncs"
+    .annotation build Landroid/annotation/LewaHook;
+        value = .enum Landroid/annotation/LewaHook$LewaHookType;->CHANGE_CODE:Landroid/annotation/LewaHook$LewaHookType;
+    .end annotation
 
     .prologue
     const/high16 v6, 0x1020
@@ -7029,9 +7047,9 @@
 
     if-nez v2, :cond_0
 
-    new-instance v2, Lcom/android/internal/policy/impl/KeyguardViewMediator;
+    new-instance v2, Lcom/android/internal/policy/impl/LewaKeyguardViewMediator;
 
-    invoke-direct {v2, p1, v5}, Lcom/android/internal/policy/impl/KeyguardViewMediator;-><init>(Landroid/content/Context;Lcom/android/internal/widget/LockPatternUtils;)V
+    invoke-direct {v2, p1, p0}, Lcom/android/internal/policy/impl/LewaKeyguardViewMediator;-><init>(Landroid/content/Context;Lcom/android/internal/policy/impl/PhoneWindowManager;)V
 
     iput-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardMediator:Lcom/android/internal/policy/impl/KeyguardViewMediator;
 
@@ -9710,7 +9728,7 @@
 
     iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardMediator:Lcom/android/internal/policy/impl/KeyguardViewMediator;
 
-    invoke-virtual {v2}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->onWakeMotionWhenKeyguardShowingTq()V
+    invoke-virtual {v2}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->onWakeMotionWhenKeyguardShowingTq()Z
 
     :cond_0
     :goto_1
@@ -11731,6 +11749,9 @@
     .locals 4
     .parameter "win"
     .parameter "attrs"
+    .annotation build Landroid/annotation/LewaHook;
+        value = .enum Landroid/annotation/LewaHook$LewaHookType;->CHANGE_CODE:Landroid/annotation/LewaHook$LewaHookType;
+    .end annotation
 
     .prologue
     const/4 v0, -0x7
@@ -11831,10 +11852,6 @@
     goto :goto_0
 
     :sswitch_5
-    iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguard:Landroid/view/WindowManagerPolicy$WindowState;
-
-    if-nez v1, :cond_0
-
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguard:Landroid/view/WindowManagerPolicy$WindowState;
 
     goto :goto_0
