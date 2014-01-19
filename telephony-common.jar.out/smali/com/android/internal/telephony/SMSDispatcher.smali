@@ -1432,7 +1432,7 @@
 .end method
 
 .method protected dispatchPdus([[B)V
-    .locals 3
+    .locals 0
     .parameter "pdus"
 
     .prologue
