@@ -2414,10 +2414,10 @@
     throw v1
 .end method
 
-.method private updateSystemUiVisibilityLw()I
+.method updateSystemUiVisibilityLw()I
     .locals 7
     .annotation build Landroid/annotation/LewaHook;
-        value = .enum Landroid/annotation/LewaHook$LewaHookType;->CHANGE_CODE:Landroid/annotation/LewaHook$LewaHookType;
+        value = .enum Landroid/annotation/LewaHook$LewaHookType;->CHANGE_CODE_AND_ACCESS:Landroid/annotation/LewaHook$LewaHookType;
     .end annotation
 
     .prologue
@@ -4400,20 +4400,6 @@
     return-void
 .end method
 
-.method callUpdateSystemUiVisibilityLw()I
-    .locals 1
-    .annotation build Landroid/annotation/LewaHook;
-        value = .enum Landroid/annotation/LewaHook$LewaHookType;->NEW_METHOD:Landroid/annotation/LewaHook$LewaHookType;
-    .end annotation
-
-    .prologue
-    invoke-direct {p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->updateSystemUiVisibilityLw()I
-
-    move-result v0
-
-    return v0
-.end method
-
 .method public canBeForceHidden(Landroid/view/WindowManagerPolicy$WindowState;Landroid/view/WindowManager$LayoutParams;)Z
     .locals 1
     .parameter "win"
@@ -6152,7 +6138,7 @@
 
     :cond_4
     :goto_2
-    invoke-direct {p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->updateSystemUiVisibilityLw()I
+    invoke-virtual {p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->updateSystemUiVisibilityLw()I
 
     move-result v3
 
@@ -6326,7 +6312,7 @@
     .prologue
     iput-object p2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mFocusedWindow:Landroid/view/WindowManagerPolicy$WindowState;
 
-    invoke-direct {p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->updateSystemUiVisibilityLw()I
+    invoke-virtual {p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->updateSystemUiVisibilityLw()I
 
     move-result v0
 

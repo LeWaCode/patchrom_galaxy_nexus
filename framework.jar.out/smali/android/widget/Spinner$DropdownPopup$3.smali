@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public onDismiss()V
-    .locals 3
+    .locals 2
 
     .prologue
     .line 1001
@@ -64,18 +64,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->removeOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    iget-object v1, p0, Landroid/widget/Spinner$DropdownPopup$3;->this$1:Landroid/widget/Spinner$DropdownPopup;
-
-    const/4 v2, 0x0
-
-    iput-boolean v2, v1, Landroid/widget/Spinner$DropdownPopup;->mGlobalLayoutListenerIsSet:Z
-
+    .line 1005
     :cond_0
-    iget-object v1, p0, Landroid/widget/Spinner$DropdownPopup$3;->this$1:Landroid/widget/Spinner$DropdownPopup;
-
-    iget-object v1, v1, Landroid/widget/Spinner$DropdownPopup;->this$0:Landroid/widget/Spinner;
-
-    invoke-static {v1}, Landroid/widget/Spinner$Injector;->setSpinnerBackGround(Landroid/widget/Spinner;)V
-
     return-void
 .end method
