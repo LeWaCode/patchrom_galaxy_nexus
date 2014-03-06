@@ -8,8 +8,7 @@
     value = {
         Lcom/android/internal/telephony/SmsUsageMonitor$SettingsObserverHandler;,
         Lcom/android/internal/telephony/SmsUsageMonitor$SettingsObserver;,
-        Lcom/android/internal/telephony/SmsUsageMonitor$ShortCodePatternMatcher;,
-        Lcom/android/internal/telephony/SmsUsageMonitor$Injector;
+        Lcom/android/internal/telephony/SmsUsageMonitor$ShortCodePatternMatcher;
     }
 .end annotation
 
@@ -1856,23 +1855,9 @@
     .locals 3
     .parameter "appName"
     .parameter "smsWaiting"
-    .annotation build Landroid/annotation/LewaHook;
-        value = .enum Landroid/annotation/LewaHook$LewaHookType;->CHANGE_CODE:Landroid/annotation/LewaHook$LewaHookType;
-    .end annotation
 
     .prologue
-    invoke-static {p1}, Lcom/android/internal/telephony/SmsUsageMonitor$Injector;->check(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_lewa_0
-
-    const/4 v1, 0x1
-
-    :goto_0
-    return v1
-
-    :cond_lewa_0
+    .line 370
     iget-object v2, p0, Lcom/android/internal/telephony/SmsUsageMonitor;->mSmsStamp:Ljava/util/HashMap;
 
     monitor-enter v2
@@ -1914,7 +1899,7 @@
 
     monitor-exit v2
 
-    goto :goto_0
+    return v1
 
     .line 380
     .end local v0           #sentList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Long;>;"

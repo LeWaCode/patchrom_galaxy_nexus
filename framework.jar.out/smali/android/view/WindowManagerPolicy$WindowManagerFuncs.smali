@@ -32,7 +32,7 @@
 .method public abstract monitorInput(Ljava/lang/String;)Landroid/view/InputChannel;
 .end method
 
-.method public abstract rebootEx()V
+.method public abstract reboot()V
     .annotation build Landroid/annotation/LewaHook;
         value = .enum Landroid/annotation/LewaHook$LewaHookType;->NEW_METHOD:Landroid/annotation/LewaHook$LewaHookType;
     .end annotation
@@ -44,20 +44,8 @@
 .method public abstract reevaluateStatusBarVisibility()V
 .end method
 
-.method public abstract registerPointerEventListener(Landroid/view/WindowManagerPolicy$PointerEventListener;)V
-    .annotation build Landroid/annotation/LewaHook;
-        value = .enum Landroid/annotation/LewaHook$LewaHookType;->NEW_METHOD:Landroid/annotation/LewaHook$LewaHookType;
-    .end annotation
-.end method
-
 .method public abstract shutdown(Z)V
 .end method
 
 .method public abstract switchKeyboardLayout(II)V
-.end method
-
-.method public abstract unregisterPointerEventListener(Landroid/view/WindowManagerPolicy$PointerEventListener;)V
-    .annotation build Landroid/annotation/LewaHook;
-        value = .enum Landroid/annotation/LewaHook$LewaHookType;->NEW_INTERFACE:Landroid/annotation/LewaHook$LewaHookType;
-    .end annotation
 .end method

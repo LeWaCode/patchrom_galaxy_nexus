@@ -307,14 +307,7 @@
 
     iput v4, p0, Landroid/widget/Spinner;->mDropDownWidth:I
 
-    const/4 v4, 0x1
-
-    invoke-virtual {v0, v4}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v4}, Landroid/widget/Spinner$DropdownPopup;->setListSelector(Landroid/graphics/drawable/Drawable;)V
-
+    .line 179
     const/4 v4, 0x2
 
     invoke-virtual {v0, v4}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -382,12 +375,23 @@
     .parameter "x0"
 
     .prologue
+    .line 57
+    iget-object v0, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method static synthetic access$400(Landroid/widget/Spinner;)Landroid/content/Context;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
     iget-object v0, p0, Landroid/widget/Spinner;->mContext:Landroid/content/Context;
 
     return-object v0
 .end method
 
-.method static synthetic access$400(Landroid/widget/Spinner;)Z
+.method static synthetic access$500(Landroid/widget/Spinner;)Z
     .locals 1
     .parameter "x0"
 

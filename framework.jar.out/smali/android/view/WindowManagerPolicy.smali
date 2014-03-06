@@ -8,7 +8,6 @@
     value = {
         Landroid/view/WindowManagerPolicy$OnKeyguardExitResult;,
         Landroid/view/WindowManagerPolicy$ScreenOnListener;,
-        Landroid/view/WindowManagerPolicy$PointerEventListener;,
         Landroid/view/WindowManagerPolicy$WindowManagerFuncs;,
         Landroid/view/WindowManagerPolicy$FakeWindow;,
         Landroid/view/WindowManagerPolicy$WindowState;
